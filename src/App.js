@@ -33,7 +33,7 @@ const sections = [
 
 function App() {
   const [activeSectionId, setActiveSectionId] = React.useState(
-    sections[3].sectionId
+    sections[0].sectionId
   );
 
   return (
