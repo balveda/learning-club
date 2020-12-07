@@ -2,15 +2,15 @@ import React from "react";
 import "./App.css";
 import styled from "styled-components";
 
-import { ExpandMore } from "@styled-icons/material/ExpandMore";
-import { ExpandLess } from "@styled-icons/material/ExpandLess";
-
 import { newsFeed } from "./data/newsFeed";
 
 import Exercise from "./exercise/exercise";
 import Final1 from "./final/final-1";
 import Final2 from "./final/final-2";
 import Final3 from "./final/final-3";
+import Final4 from "./final/final-4";
+import Final5 from "./final/final-5";
+import Final6 from "./final/final-6";
 
 const sections = [
   {
@@ -29,6 +29,18 @@ const sections = [
     sectionId: "final-3",
     buttonText: "final 3",
   },
+  {
+    sectionId: "final-4",
+    buttonText: "final 4",
+  },
+  {
+    sectionId: "final-5",
+    buttonText: "final 5",
+  },
+  {
+    sectionId: "final-6",
+    buttonText: "final 6",
+  },
 ];
 
 function App() {
@@ -44,6 +56,7 @@ function App() {
             <Button
               onClick={() => setActiveSectionId(section.sectionId)}
               disabled={section.sectionId === activeSectionId}
+              active={section.sectionId === activeSectionId}
               key={section.sectionId}
             >
               {section.buttonText}
@@ -55,6 +68,9 @@ function App() {
       {activeSectionId === "final-1" && <Final1 newsFeed={newsFeed} />}
       {activeSectionId === "final-2" && <Final2 newsFeed={newsFeed} />}
       {activeSectionId === "final-3" && <Final3 newsFeed={newsFeed} />}
+      {activeSectionId === "final-4" && <Final4 newsFeed={newsFeed} />}
+      {activeSectionId === "final-5" && <Final5 newsFeed={newsFeed} />}
+      {activeSectionId === "final-6" && <Final6 newsFeed={newsFeed} />}
     </Container>
   );
 }
